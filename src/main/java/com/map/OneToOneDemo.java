@@ -48,13 +48,12 @@ public class OneToOneDemo {
         transaction.commit();
 
 
-//        Question question1=(Question) session.get(Question.class,1);
-//        System.out.println(question1.getQuestion());
-//        System.out.println(question1.getQuestionId());
-//
-//        Answer answer2=(Answer) session.get(Answer.class,question1.getAnswer().getAnswerId());
-//        System.out.println(answer2.getAnswerId());
-//        System.out.println(answer2.getAnswer());
+        Question question1=(Question) session.get(Question.class,1);
+        System.out.println(question1.getQuestion());
+
+        for (Answer answer3: question1.getAnswers()){
+            System.out.println(answer3.getAnswer());
+        }
 
         factory.close();
     }
