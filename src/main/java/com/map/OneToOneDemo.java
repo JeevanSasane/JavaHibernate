@@ -49,11 +49,14 @@ public class OneToOneDemo {
 
 
         Question question1=(Question) session.get(Question.class,1);
+        System.out.println(question1.getQuestionId());
         System.out.println(question1.getQuestion());
+
+        System.out.println(question1.getAnswers().size());
 
         for (Answer answer3: question1.getAnswers()){
             System.out.println(answer3.getAnswer());
-        }
+       }
 
         factory.close();
     }
